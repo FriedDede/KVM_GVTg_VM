@@ -60,7 +60,7 @@
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='/home/franco/vm/windowsLIB.qcow2' index='1'/>
+      <source file='PATHTOHDD' index='1'/>
       <backingStore/>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
