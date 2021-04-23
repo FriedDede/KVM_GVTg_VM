@@ -31,19 +31,21 @@ Assuming the host has never been set up for running a VM in qemu/kvm.
     -   usermod -a -G root libvirtd-qemu
 
 4) **Gvtg hook**
-    copy the content of "qemu" in /etc/libvirtd/hooks/qemu
-    make the hook executable: sudo chmod +X /etc/libvirtd/hooks/qemu
+    copy the content of "qemu" in: 
+    -   /etc/libvirtd/hooks/qemu
+    make the hook executable: 
+    -   sudo chmod +X /etc/libvirtd/hooks/qemu
 
 6) **Create a virtual disk** 
     (40GB example):
     -   qemu-img create -f qcow2 name.qcow2 40G
 
 7) **Define VM**
-1.  Create a .xml file and copy the content from "win10-virt.xml", or directly download the file instead
-2.  Open the xml file replace PATHTOHDD with the path to your virtual disk
-3.  Define VM:  
+-  Create a .xml file and copy the content from "win10-virt.xml", or directly download the file instead
+-   Open the xml file replace PATHTOHDD with the path to your virtual disk
+-   Define VM:  
     -   sudo virsh define win10-virt.xml
-4.  Now the VM should be visible in Virt-manager
+-   Now the VM should be visible in Virt-manager
 
 8) **For further performance optimization:**
     -   https://wiki.archlinux.org/index.php/Intel_GVT-g
@@ -53,8 +55,6 @@ Assuming the host has never been set up for running a VM in qemu/kvm.
 1) First Boot, Windows install:
     -   Add a Windwos10 ISO as Cdrom and set it as the boot device (via virt-manager) 
     -   Download virtio drives for Windows https://github.com/virtio-win/virtio-win-pkg-scripts
-    -   add Virtio-driver ISO as Cdrom
+    -   Add Virtio-driver ISO as Cdrom
     -   Boot
     -   Follow this guide: https://linuxhint.com/install_virtio_drivers_kvm_qemu_windows_vm/
-
-#   FINISH
