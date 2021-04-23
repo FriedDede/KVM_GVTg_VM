@@ -1,5 +1,5 @@
 # KVM_GVTg_VM
-Windows VM running on Qemu/KVM with cpu pinning, GVTg passthrought and hypervisor hydden grom the guest.
+Windows VM running on Qemu/KVM with cpu pinning, GVTg passthrought and hypervisor hydden from the guest.
 
 # Host setup
 Assuming the host has never been set up for running a VM in qemu/kvm.
