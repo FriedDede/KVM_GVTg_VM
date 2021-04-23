@@ -7,10 +7,12 @@ Assuming the host has never been set up for running a VM in qemu/kvm.
 0) sudo apt-get install qemu qemu-system-x86 qemu-kvm qemu-utils virt-manager libvirt-daemon-driver-qemu
 
 1) **Kernel modules**
+    
     Add:
     -   kvmgt
     -   vfio-iommu-type1
     -   vfio-mdev
+    
     to:
     -   /etc/modules
 
@@ -18,25 +20,31 @@ Assuming the host has never been set up for running a VM in qemu/kvm.
     -   sudo update-initramfs -u
 
 2) **Boot parameters**
+    
     Modify GRUB_CMDLINE_LINUX line in:
     -   /etc/default/grub
+    
     To match the one in "grub"
 
     update the bootloader: 
     -   sudo update-grub
 
 3) **Libvirtd permissions**
+    
     add kvm and libvirtd-qemu to the root group:
     -   usermod -a -G root kvm
     -   usermod -a -G root libvirtd-qemu
 
 4) **Gvtg hook**
+    
     copy the content of "qemu" in: 
     -   /etc/libvirtd/hooks/qemu
+    
     make the hook executable: 
     -   sudo chmod +X /etc/libvirtd/hooks/qemu
 
 6) **Create a virtual disk** 
+    
     (40GB example):
     -   qemu-img create -f qcow2 name.qcow2 40G
 
